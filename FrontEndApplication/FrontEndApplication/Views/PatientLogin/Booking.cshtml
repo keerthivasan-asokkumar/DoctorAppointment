@@ -1,0 +1,31 @@
+﻿@model FrontEndApp.Models.AppointmentDetails
+
+@{
+    ViewData["Title"] = "Appointment Booking Page";
+}
+@using (Html.BeginForm("Index", "Booking", FormMethod.Post))
+{
+    <div>
+        <h3> Please Book an appointment</h3>
+        <div class="card-body">
+            <div class="form-group">
+                @Html.LabelFor(m => m.AppointmentDate)
+                @Html.TextBoxFor(m => m.AppointmentDate, "", new { @class = "form-control", @placeholder = "AppointmentDate" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.AppointmentSlot)
+                @Html.TextBoxFor(m => m.AppointmentSlot, "", new { @class = "form-control", @placeholder = "AppointmentSlot" })
+
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.AppointmentDoctorId)
+                @Html.TextBoxFor(m => m.AppointmentDoctorId, "", new { @class = "form-control", @placeholder = "AppointmentDoctorId" })
+
+            </div>
+            <div class="form-group">
+                <input type="submit" name="Book" class="btn btn-danger" value="Register" />
+            </div>
+        </div>
+    </div>
+}
